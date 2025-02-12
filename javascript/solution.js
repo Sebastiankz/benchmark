@@ -33,6 +33,8 @@ function addPrimeNumbers(matrix) {
     return sum;
 }
 
+const start = Date.now()
+
 const N = 1000;
 const createSpiralMatrix = spiralMatrix(N);
 console.log('Matriz Espiral de 1000x1000');
@@ -40,3 +42,6 @@ console.log(createSpiralMatrix);
 
 const suma = addPrimeNumbers(createSpiralMatrix);
 console.log('Suma de los números primos de la matriz', suma);
+
+const executionTime = Date.now() - start;
+console.log('Tiempo de ejecución', executionTime, 'ms');

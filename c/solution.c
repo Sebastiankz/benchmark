@@ -50,11 +50,13 @@ long long addPrimeNumbers(int n, int matrix[n][n])
 
 int main()
 {
+    clock_t start = clock();
+
     int N = 1000;
     int matrix[N][N];
     spiralMatrix(N, matrix);
 
-    printf("Matriz Espiral de 10x10:\n");
+    printf("Matriz Espiral de 1000x1000:\n");
     for (int i = 0; i < 10; i++)
     {
         for (int j = 0; j < 10; j++)
@@ -66,6 +68,10 @@ int main()
 
     long long suma = addPrimeNumbers(N, matrix);
     printf("Suma de los números primos de la matriz: %lld\n", suma);
+
+    clock_t end = clock();
+    double execution_time = (double)(end - start) / CLOCKS_PER_SEC * 1000;
+    printf("Tiempo de ejecución: %f ms\n", execution_time);
 
     return 0;
 }

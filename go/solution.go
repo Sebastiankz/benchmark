@@ -48,13 +48,20 @@ func addPrimeNumbers(matrix [][]int) int64 {
 }
 
 func main() {
+
+	start := time.now()
+
 	N := 1000
 	createSpiralMatrix := spiralMatrix(N)
-	fmt.Println("Matriz Espiral de 10x10:")
+	fmt.Println("Matriz Espiral de 1000x1000:")
 	for i := 0; i < 10; i++ {
 		fmt.Println(createSpiralMatrix[i])
 	}
 
 	suma := addPrimeNumbers(createSpiralMatrix)
 	fmt.Printf("Suma de los números primos de la matriz: %d\n", suma)
+
+	executionTime := time.Since(start).Milliseconds()
+	fmt.Printf("Tiempo de ejecución: %d ms\n", executionTime)
+
 }
