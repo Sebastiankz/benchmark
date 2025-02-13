@@ -1,0 +1,14 @@
+# Usar la imagen oficial de OpenJDK
+FROM openjdk:latest
+
+# Establecer el directorio de trabajo
+WORKDIR /app
+
+# Copiar los archivos al contenedor
+COPY . .
+
+# Compilar el código Java
+RUN javac Main.java
+
+# Ejecutar el programa
+CMD ["java", "Main"]

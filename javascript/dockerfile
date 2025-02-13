@@ -1,0 +1,11 @@
+# Usar la imagen oficial de Node.js
+FROM node:latest
+
+# Establecer el directorio de trabajo
+WORKDIR /app
+
+# Copiar los archivos al contenedor
+COPY . .
+
+# Ejecutar el script de Node.js
+CMD ["node", "main.js"]
