@@ -1,13 +1,7 @@
-# Usar la imagen oficial de Python
 FROM python:latest
 
-# Establecer el directorio de trabajo
 WORKDIR /app
 
-# Copiar los archivos al contenedor
-COPY . .
+COPY solution.py .
 
-RUN pip install numpy
-
-# Ejecutar el script de Python
-CMD ["python", "solution.py"]
+CMD ["python", "solution.py"]  # Ejecutar "solution.py" con Python

@@ -1,14 +1,14 @@
-# Imagen base de Rust
+# Usa una imagen base de Rust
 FROM rust:latest
 
-# Establecer el directorio de trabajo dentro del contenedor
+# Establece el directorio de trabajo
 WORKDIR /app
 
-# Copiar los archivos del código fuente
-COPY . .
+# Copia el archivo fuente
+COPY solution.rs .
 
-# Compilar el programa en Rust
-RUN rustc -o solution main.rs
+# Compila el código
+RUN rustc solution.rs -o solution
 
-# Ejecutar el binario compilado
+# Define el comando para ejecutar el programa
 CMD ["./solution"]

@@ -1,14 +1,9 @@
-# Imagen Go
 FROM golang:latest
-
 
 WORKDIR /app
 
+COPY solution.go .
 
-COPY . .
+RUN go build -o solution solution.go  # Compilar y generar el ejecutable "solution"
 
-
-RUN go build -o app solution.go
-
-
-CMD ["./app"]
+CMD ["./solution"]  # Ejecutar "solution"

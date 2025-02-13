@@ -1,10 +1,9 @@
-#imagen
 FROM gcc:latest
 
 WORKDIR /app
 
-COPY . .  
+COPY solution.c .
 
-RUN gcc -o solution solution.c -lm
+RUN gcc -o solution solution.c -lm  # Compilar y generar el ejecutable "solution"
 
-CMD ["./solution"]
+CMD ["./solution"]  # Ejecutar "solution"
