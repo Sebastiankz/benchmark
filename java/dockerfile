@@ -1,15 +1,14 @@
-# Usar la imagen oficial de OpenJDK
+# Usar la imagen oficial de OpenJDK (el último disponible)
 FROM openjdk:latest
 
-# Establecer el directorio de trabajo
+# Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar el archivo Java al contenedor
-COPY SpiralMatrix.java .
+# Copiar todos los archivos del directorio actual al contenedor
+COPY . .
 
 # Compilar el código Java
 RUN javac SpiralMatrix.java
 
-# Ejecutar el programa
+# Ejecutar el programa después de la compilación
 CMD ["java", "SpiralMatrix"]
-
