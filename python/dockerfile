@@ -7,5 +7,7 @@ WORKDIR /app
 # Copiar los archivos al contenedor
 COPY . .
 
+RUN pip install numpy
+
 # Ejecutar el script de Python
-CMD ["python", "main.py"]
+CMD ["python", "solution.py"]

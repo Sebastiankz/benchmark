@@ -1,0 +1,9 @@
+FROM gcc:latest
+
+WORKDIR /app
+
+COPY . .  
+
+RUN gcc -o solution solution.c -lm
+
+CMD ["./solution"]

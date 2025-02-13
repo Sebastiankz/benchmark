@@ -32,12 +32,9 @@ def addPrimeNumbers(matrix):
 start = time.time()
 N = 1000
 createEspiralMatrix = espiralMatrix(N)
-print('Matriz Espiral de 1000x1000')
-print(createEspiralMatrix)
 
 suma = addPrimeNumbers(createEspiralMatrix)
-print('Suma de los numeros primos de la matriz', suma)
 
 end = time.time()
 execution_time = int((end - start) * 1000)
-print(execution_time, 'ms')
+print(execution_time, "ms")

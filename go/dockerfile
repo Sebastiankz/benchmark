@@ -1,14 +1,14 @@
 # Imagen Go
 FROM golang:latest
 
-# Directorio de trabajo
+
 WORKDIR /app
 
-# Copiar los archivos al contenedor
+
 COPY . .
 
-# Compilar el programa
-RUN go build -o app main.go
 
-# Ejecutar el programa
+RUN go build -o app solution.go
+
+
 CMD ["./app"]

@@ -1,6 +1,4 @@
 
-import java.util.Arrays;
-
 public class SpiralMatrix {
 
     public static boolean isPrime(int num) {
@@ -50,16 +48,10 @@ public class SpiralMatrix {
 
         int N = 1000;
         int[][] createSpiralMatrix = spiralMatrix(N);
-        System.out.println("Matriz Espiral de 1000x10000");
-        for (int i = 0; i < 10; i++) {
-            System.out.println(Arrays.toString(createSpiralMatrix[i]));
-        }
-
         long suma = addPrimeNumbers(createSpiralMatrix);
-        System.out.println("Suma de los números primos de la matriz: " + suma);
 
         long executionTime = System.currentTimeMillis() - startTime;
-        System.out.println("Tiempo de ejecución: " + executionTime + "ms");
+        System.out.println(executionTime + " ms");
 
     }
 }
