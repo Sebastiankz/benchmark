@@ -4,11 +4,12 @@ FROM openjdk:latest
 # Establecer el directorio de trabajo
 WORKDIR /app
 
-# Copiar los archivos al contenedor
-COPY . .
+# Copiar el archivo Java al contenedor
+COPY SpiralMatrix.java .
 
 # Compilar el código Java
-RUN javac Main.java
+RUN javac SpiralMatrix.java
 
 # Ejecutar el programa
-CMD ["java", "Main"]
+CMD ["java", "SpiralMatrix"]
+
