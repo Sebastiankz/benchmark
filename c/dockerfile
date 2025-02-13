@@ -1,3 +1,4 @@
+#imagen
 FROM gcc:latest
 
 WORKDIR /app
