@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY solution.c .
 
-RUN gcc -o solution solution.c -lm  # Compilar y generar el ejecutable "solution"
+RUN gcc -o solution solution.c -lm 
 
-CMD ["./solution"]  # Ejecutar "solution"
+CMD ["./solution"]  

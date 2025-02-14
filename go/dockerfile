@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY solution.go .
 
-RUN go build -o solution solution.go  # Compilar y generar el ejecutable "solution"
+RUN go build -o solution solution.go 
 
-CMD ["./solution"]  # Ejecutar "solution"
+CMD ["./solution"] 

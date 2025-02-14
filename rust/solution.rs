@@ -52,4 +52,24 @@ fn main() {
 
     let execution_time = start_time.elapsed();
     println!("Tiempo de ejecución: {:.2?}ms", execution_time.as_millis());
+
+    let output_dir = "outputs";
+    std::fs::create_dir_all(output_dir)?;
+
+    let file_path = Path::new(output_dir).join("output.csv");
+    let file_exists = file_path.exists();
+
+    let mut file = OpenOptions::new()
+        .append(true)
+        .create(true)
+        .open(file_path)?;
+
+    if !file_exists {
+        writeln!(file, "Lenguaje,Tiempo de Ejecución (ms)")?;
+    }
+
+    writeln!(file, "Rust,{}", execution_time)?;
+
+    Ok(())
 }
+

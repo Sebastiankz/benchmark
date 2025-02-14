@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY solution.py .
 
-CMD ["python", "solution.py"]  # Ejecutar "solution.py" con Python
+RUN pip install numpy
+
+CMD ["python", "solution.py"]  
