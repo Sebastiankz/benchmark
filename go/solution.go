@@ -55,6 +55,7 @@ func main() {
 	createSpiralMatrix := spiralMatrix(N)
 
 	suma := addPrimeNumbers(createSpiralMatrix)
+	ftm.print(suma)
 
 	executionTime := time.Since(start).Milliseconds()
 	fmt.Printf("%d ms\n", executionTime)
