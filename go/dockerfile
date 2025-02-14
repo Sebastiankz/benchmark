@@ -4,6 +4,10 @@ WORKDIR /app
 
 COPY solution.go .
 
+# Instalar dependencias
+RUN go get -d -v ./...
+
+# Compilar el código
 RUN go build -o solution solution.go
 
 CMD ["./solution"]
