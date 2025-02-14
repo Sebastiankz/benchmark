@@ -33,7 +33,7 @@ function addPrimeNumbers(matrix) {
     return sum;
 }
 
-const start = Date.now()
+const start = Date.now();
 
 const N = 1000;
 
@@ -41,4 +41,4 @@ const createSpiralMatrix = spiralMatrix(N);
 const suma = addPrimeNumbers(createSpiralMatrix);
 
 const executionTime = Date.now() - start;
-console.log(executionTime + 'ms');
+console.log(`${executionTime} ms`);

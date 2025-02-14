@@ -1,3 +1,6 @@
+use std::fs::{File, OpenOptions};
+use std::io::{self, Write};
+use std::path::Path;
 use std::time::Instant;
 
 fn is_prime(n: u32) -> bool {
@@ -36,7 +39,7 @@ fn sum_primes(matrix: &Vec<Vec<u32>>) -> u64 {
     matrix.iter().flatten().filter(|&&n| is_prime(n)).map(|&n| n as u64).sum()
 }
 
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let start_time = Instant::now();
 
     let n = 1000;
@@ -51,7 +54,7 @@ fn main() {
     println!("Suma de los números primos de la matriz: {}", sum);
 
     let execution_time = start_time.elapsed();
-    println!("Tiempo de ejecución: {:.2?}ms", execution_time.as_millis());
+    println!("Tiempo de ejecución: {} ms", execution_time.as_millis());
 
     let output_dir = "outputs";
     std::fs::create_dir_all(output_dir)?;
@@ -68,8 +71,7 @@ fn main() {
         writeln!(file, "Lenguaje,Tiempo de Ejecución (ms)")?;
     }
 
-    writeln!(file, "Rust,{}", execution_time)?;
+    writeln!(file, "Rust,{}", execution_time.as_millis())?;
 
     Ok(())
 }
-

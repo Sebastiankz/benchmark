@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"time"
 )
 
 func isPrime(num int) bool {
@@ -48,8 +49,7 @@ func addPrimeNumbers(matrix [][]int) int64 {
 }
 
 func main() {
-
-	start := time.now()
+	start := time.Now()
 
 	N := 1000
 	createSpiralMatrix := spiralMatrix(N)
@@ -57,6 +57,5 @@ func main() {
 	suma := addPrimeNumbers(createSpiralMatrix)
 
 	executionTime := time.Since(start).Milliseconds()
-	fmt.Printf(executionTime + "ms\n")
-
+	fmt.Printf("%d ms\n", executionTime)
 }
