@@ -61,7 +61,7 @@ int main()
 
     clock_t end = clock();
     double execution_time = (double)(end - start) / CLOCKS_PER_SEC * 1000;
-    printf(execution_time + "ms\n");
+    printf("%.2f ms\n", execution_time);
 
     return 0;
 }
